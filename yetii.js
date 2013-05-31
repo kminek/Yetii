@@ -1,6 +1,6 @@
 /*
 Yetii - Yet (E)Another Tab Interface Implementation
-version 1.7
+version 1.8
 http://www.kminek.pl/lab/yetii/
 Copyright (c) Grzegorz Wojcik
 Code licensed under the BSD License:
@@ -90,19 +90,30 @@ function Yetii() {
     this.gup = function(name) {
         name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
         var regexS = "[\\?&]"+name+"=([^&#]*)";
+        var regex = new RegExp(regexS);
+        var results = regex.exec(window.location.href);
+        if (results == null) return null;
+        else return results[1];
+    };
+    
+    this.guh = function() {
+        var regexS = "#([^&#]*)";
         var regex = new RegExp( regexS );
-        var results = regex.exec( window.location.href );
+        var results = regex.exec(window.location.hash);
         if (results == null) return null;
         else return results[1];
     };
 
     this.parseurl = function(tabinterfaceid) {
         var result = this.gup(tabinterfaceid);
-        if (result==null) return null;
+        if (result == null) result = this.guh();
+        if (result == null) return null;
         if (parseInt(result)) return parseInt(result);
         if (document.getElementById(result)) {
-            for (var i=0;i<this.tabs.length;i++) {
-                if (this.tabs[i].id == result) return (i+1);
+            for (var i = 0; i < this.tabs.length; i++) {
+                if (this.tabs[i].id == result) { 
+                    return (i+1); 
+                }
             }
         }
         return null;
