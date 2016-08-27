@@ -1,0 +1,10 @@
+{
+    "name": "yetii",
+    "main": "yetii.js",
+    "homepage": "http://yetii.kminek.pl/",
+    "authors": [
+        "Grzesiek W <kontakt@kminek.pl>"
+    ],
+    "description": "Yet (E)Another JavaScript Tab Interface Implementation",
+    "license": "MIT"
+}

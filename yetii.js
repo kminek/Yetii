@@ -1,6 +1,6 @@
 /*
 Yetii - Yet (E)Another Tab Interface Implementation
-version 1.8
+version 1.8.0
 http://www.kminek.pl/lab/yetii/
 Copyright (c) Grzegorz Wojcik
 Code licensed under the BSD License:
@@ -95,7 +95,7 @@ function Yetii() {
         if (results == null) return null;
         else return results[1];
     };
-    
+
     this.guh = function() {
         var regexS = "#([^&#]*)";
         var regex = new RegExp( regexS );
@@ -111,8 +111,8 @@ function Yetii() {
         if (parseInt(result)) return parseInt(result);
         if (document.getElementById(result)) {
             for (var i = 0; i < this.tabs.length; i++) {
-                if (this.tabs[i].id == result) { 
-                    return (i+1); 
+                if (this.tabs[i].id == result) {
+                    return (i+1);
                 }
             }
         }
