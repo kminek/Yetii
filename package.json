@@ -4,8 +4,8 @@
     "description": "Yet (E)Another JavaScript Tab Interface Implementation",
     "homepage": "http://yetii.kminek.pl/",
     "authors": [
-        "Grzesiek W <kontakt@kminek.pl>",
+        "Grzesiek W <kontakt@kminek.pl>"
     ],
     "main": "yetii.js",
-    "license": "MIT",
+    "license": "MIT"
 }
